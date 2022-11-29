@@ -22,7 +22,7 @@ public class NaveTripuladaE implements Serializable {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqTri")
-	@SequenceGenerator(name="seqTri", sequenceName = "SEQ_ID_NAVE_TRIPULADA")
+	@SequenceGenerator(name="seqTri", sequenceName = "SEQ_ID_NAVES")
 	private Long id_nave_tripulada;
 	@Column(unique=true)
 	private String nombre;

@@ -22,7 +22,7 @@ public class NaveLanzaderaE implements Serializable {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqLanz")
-	@SequenceGenerator(name="seqLanz", sequenceName = "SEQ_ID_NAVE_LANZADERA")
+	@SequenceGenerator(name="seqLanz", sequenceName = "SEQ_ID_NAVES")
 	private Long id_nave_lanzadera;
 	private int potencia_propulcion;
 	@Column(unique=true)
@@ -43,7 +43,6 @@ public class NaveLanzaderaE implements Serializable {
 	public NaveLanzaderaE() {
 		super();
 	}
-	
 
 	//Getters y setters
 	public String getNombre() {

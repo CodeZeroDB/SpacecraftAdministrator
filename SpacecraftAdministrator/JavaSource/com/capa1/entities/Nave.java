@@ -30,6 +30,8 @@ public abstract class Nave {
 	protected String combustible;
 	@NotNull
 	protected int tipo;
+	@NotNull
+	protected int peso_transporte;
 	
 	public Nave() {
 	}
@@ -37,7 +39,7 @@ public abstract class Nave {
 	//Costructor
 	public Nave(@NotNull String nombre, @NotNull int peso, @NotNull int empuje, @NotNull int motor, @NotNull int alto,
 			@NotNull int ancho, @NotNull String pais, @NotNull int velocidad_maxima, @NotNull Date fecha_inicio,
-			Date fecha_fin, @NotNull String combustible, @NotNull int tipo) {
+			Date fecha_fin, @NotNull String combustible, @NotNull int tipo, @NotNull int peso_transporte) {
 		this.nombre = nombre;
 		this.peso = peso;
 		this.empuje = empuje;
@@ -50,13 +52,13 @@ public abstract class Nave {
 		this.fecha_fin = fecha_fin;
 		this.combustible = combustible;
 		this.tipo = tipo;
+		this.peso_transporte = peso_transporte;
 	}
 
 	//Getters y setters
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -149,5 +151,17 @@ public abstract class Nave {
 		this.tipo = tipo;
 	}
 	
-	protected abstract String getTIPO();
+	public int getPeso_transporte() {
+		return peso_transporte;
+	}
+
+	public void setPeso_transporte(int peso_transporte) {
+		this.peso_transporte = peso_transporte;
+	}
+
+	//Metodos abstractos
+	protected abstract void setPotencia(int pot);
+	protected abstract void setDes(int des);
+	protected abstract void setCap(int cap);
+	
 }

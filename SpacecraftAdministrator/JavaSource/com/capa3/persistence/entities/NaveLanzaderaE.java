@@ -24,10 +24,11 @@ public class NaveLanzaderaE implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqLanz")
 	@SequenceGenerator(name="seqLanz", sequenceName = "SEQ_ID_NAVES")
 	private Long id_nave_lanzadera;
-	private int potencia_propulcion;
+	private int potencia_propulsion;
 	@Column(unique=true)
 	private String nombre;
 	private int peso;
+	private int peso_transporte;
 	private int empuje;
 	private int motor;
 	private int alto;
@@ -42,6 +43,25 @@ public class NaveLanzaderaE implements Serializable {
 	//Constructores
 	public NaveLanzaderaE() {
 		super();
+	}
+	public NaveLanzaderaE(int potencia_propulsion, String nombre, int peso, int peso_transporte, int empuje, int motor,
+			int alto, int ancho, String pais, int velocidad_maxima, Date fecha_inicio, Date fecha_fin,
+			String combustible, int tipo) {
+		super();
+		this.potencia_propulsion = potencia_propulsion;
+		this.nombre = nombre;
+		this.peso = peso;
+		this.peso_transporte = peso_transporte;
+		this.empuje = empuje;
+		this.motor = motor;
+		this.alto = alto;
+		this.ancho = ancho;
+		this.pais = pais;
+		this.velocidad_maxima = velocidad_maxima;
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
+		this.combustible = combustible;
+		this.tipo = tipo;
 	}
 
 	//Getters y setters
@@ -72,7 +92,7 @@ public class NaveLanzaderaE implements Serializable {
 	public int getAlto() {
 		return alto;
 	}
-		public void setAlto(int alto) {
+	public void setAlto(int alto) {
 	this.alto = alto;
 		}
 	public int getAncho() {
@@ -123,11 +143,18 @@ public class NaveLanzaderaE implements Serializable {
 	public void setId_nave_lanzadera(Long id_nave_lanzadera) {
 		this.id_nave_lanzadera = id_nave_lanzadera;
 	}
-	public int getPotencia_propulcion() {
-		return potencia_propulcion;
+	public int getPotencia_propulsion() {
+		return potencia_propulsion;
 	}
-	public void setPotencia_propulcion(int potencia_propulcion) {
-		this.potencia_propulcion = potencia_propulcion;
+	public void setPotencia_propulsion(int potencia_propulsion) {
+		this.potencia_propulsion = potencia_propulsion;
+	}
+	public int getPeso_transporte() {
+		return peso_transporte;
+	}
+
+	public void setPeso_transporte(int peso_transporte) {
+		this.peso_transporte = peso_transporte;
 	}
 
 }

@@ -28,6 +28,7 @@ public class NaveNoTripuladaE implements Serializable {
 	@Column(unique=true)
 	private String nombre;
 	private int peso;
+	private int peso_transporte;
 	private int empuje;
 	private int motor;
 	private int alto;
@@ -43,12 +44,14 @@ public class NaveNoTripuladaE implements Serializable {
 	public NaveNoTripuladaE() {
 		super();
 	}
-	public NaveNoTripuladaE(int desplazamiento, String nombre, int peso, int empuje, int motor, int alto, int ancho,
-			String pais, int velocidad_maxima, Date fecha_inicio, Date fecha_fin, String combustible, int tipo) {
+	public NaveNoTripuladaE(int desplazamiento, String nombre, int peso, int peso_transporte,
+			int empuje, int motor, int alto, int ancho, String pais, int velocidad_maxima, Date fecha_inicio,
+			Date fecha_fin, String combustible, int tipo) {
 		super();
 		this.desplazamiento = desplazamiento;
 		this.nombre = nombre;
 		this.peso = peso;
+		this.peso_transporte = peso_transporte;
 		this.empuje = empuje;
 		this.motor = motor;
 		this.alto = alto;
@@ -61,7 +64,20 @@ public class NaveNoTripuladaE implements Serializable {
 		this.tipo = tipo;
 	}
 
+
 	//Getters y setters
+	public Long getId_nave_no_tripulada() {
+		return id_nave_no_tripulada;
+	}
+	public void setId_nave_no_tripulada(Long id_nave_no_tripulada) {
+		this.id_nave_no_tripulada = id_nave_no_tripulada;
+	}
+	public int getDesplazamiento() {
+		return desplazamiento;
+	}
+	public void setDesplazamiento(int desplazamiento) {
+		this.desplazamiento = desplazamiento;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -73,6 +89,12 @@ public class NaveNoTripuladaE implements Serializable {
 	}
 	public void setPeso(int peso) {
 		this.peso = peso;
+	}
+	public int getPeso_transporte() {
+		return peso_transporte;
+	}
+	public void setPeso_transporte(int peso_transporte) {
+		this.peso_transporte = peso_transporte;
 	}
 	public int getEmpuje() {
 		return empuje;
@@ -119,7 +141,6 @@ public class NaveNoTripuladaE implements Serializable {
 	public Date getFecha_fin() {
 		return fecha_fin;
 	}
-
 	public void setFecha_fin(Date fecha_fin) {
 		this.fecha_fin = fecha_fin;
 	}
@@ -127,26 +148,13 @@ public class NaveNoTripuladaE implements Serializable {
 		return combustible;
 	}
 	public void setCombustible(String combustible) {
-			this.combustible = combustible;
+		this.combustible = combustible;
 	}
 	public int getTipo() {
 		return tipo;
 	}
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
-	}
-
-	public Long getId_nave_no_tripulada() {
-		return id_nave_no_tripulada;
-	}
-	public void setId_nave_no_tripulada(Long id_nave_no_tripulada) {
-		this.id_nave_no_tripulada = id_nave_no_tripulada;
-	}
-	public int getDesplazamiento() {
-		return desplazamiento;
-	}
-	public void setDesplazamiento(int desplazamiento) {
-		this.desplazamiento = desplazamiento;
 	}
 	
 }

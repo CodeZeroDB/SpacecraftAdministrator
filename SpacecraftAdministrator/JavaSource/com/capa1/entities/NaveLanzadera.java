@@ -10,21 +10,25 @@ public class NaveLanzadera extends Nave{
 	@NotNull
 	private Long id_nave_lanzadera;
 	@NotNull
-	private int potencia_propulcion;
+	private int potencia_propulsion;
 	
 	//Constructores
 	public NaveLanzadera() {
 		super();
 	}
+	
+	
 	public NaveLanzadera(@NotNull String nombre, @NotNull int peso, @NotNull int empuje, @NotNull int motor,
 			@NotNull int alto, @NotNull int ancho, @NotNull String pais, @NotNull int velocidad_maxima,
 			@NotNull Date fecha_inicio, Date fecha_fin, @NotNull String combustible, @NotNull int tipo,
-			@NotNull Long id_nave_lanzadera, @NotNull int potencia_propulcion) {
-		super(nombre, peso, empuje, motor, alto, ancho, pais, velocidad_maxima, fecha_inicio, fecha_fin, combustible, tipo);
+			@NotNull int peso_transporte, Long id_nave_lanzadera, int potencia_propulsion) {
+		super(nombre, peso, empuje, motor, alto, ancho, pais, velocidad_maxima, fecha_inicio, fecha_fin, combustible, tipo,
+				peso_transporte);
 		this.id_nave_lanzadera = id_nave_lanzadera;
-		this.potencia_propulcion = potencia_propulcion;
+		this.potencia_propulsion = potencia_propulsion;
 	}
-	
+
+
 	//Getters y setters
 	public Long getId_nave_lanzadera() {
 		return id_nave_lanzadera;
@@ -32,25 +36,26 @@ public class NaveLanzadera extends Nave{
 	public void setId_nave_lanzadera(Long id_nave_lanzadera) {
 		this.id_nave_lanzadera = id_nave_lanzadera;
 	}
-	public int getPotencia_propulcion() {
-		return potencia_propulcion;
+	public int getPotencia_propulsion() {
+		return potencia_propulsion;
 	}
-	public void setPotencia_propulcion(int potencia_propulcion) {
-		this.potencia_propulcion = potencia_propulcion;
+	public void setPotencia_propulsion(int potencia_propulsion) {
+		this.potencia_propulsion = potencia_propulsion;
 	}
-
+	
 	//Metodos
 	@Override
-	protected String getTIPO() {
-		String nomTipo = "";
-		if (this.tipo==1) {
-			nomTipo = "Lanzadera";
-		}else if (this.tipo==2) {
-			nomTipo = "No tripulada";
-		}else if (this.tipo==3) {
-			nomTipo = "Tripulada";
-		}
-		return nomTipo;
+	public void setPotencia(int pot) {
+		setPotencia_propulsion(pot);
 	}
+	@Override
+	public void setDes(int des) {
+		
+	}
+	@Override
+	public void setCap(int cap) {
+		
+	}
+	
 	
 }

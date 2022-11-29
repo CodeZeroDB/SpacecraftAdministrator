@@ -19,7 +19,7 @@ import com.capa3.persistence.exceptions.PersistenceException;
 
 @Stateless
 @LocalBean
-public class NaveService implements Serializable {
+public class GestionNaveService implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -41,7 +41,7 @@ public class NaveService implements Serializable {
 		b.setNombre(a.getNombre());
 		b.setPais(a.getPais());
 		b.setPeso(a.getPeso());
-		b.setPotencia_propulcion(a.getPotencia_propulcion());
+		b.setPotencia_propulsion(a.getPotencia_propulsion());
 		b.setTipo(a.getTipo());
 		b.setVelocidad_maxima(a.getVelocidad_maxima());
 		return b;
@@ -59,7 +59,7 @@ public class NaveService implements Serializable {
 		b.setNombre(a.getNombre());
 		b.setPais(a.getPais());
 		b.setPeso(a.getPeso());
-		b.setPotencia_propulcion(a.getPotencia_propulcion());
+		b.setPotencia_propulsion(a.getPotencia_propulsion());
 		b.setTipo(a.getTipo());
 		b.setVelocidad_maxima(a.getVelocidad_maxima());
 		return b;
@@ -184,11 +184,11 @@ public class NaveService implements Serializable {
 		NaveTripuladaE b = nDAO.agregarNaveTripulada(toNaveTripuladaE(a));
 		return fromNaveTripuladaE(b);
 	}
-	public NaveLanzadera agregarAlim(NaveLanzadera a) {
+	public NaveLanzadera agregarNaveLanzadera(NaveLanzadera a) {
 		NaveLanzaderaE b = nDAO.agregarNaveLazadera(toNaveLanzaderaE(a));
 		return fromNaveLanzaderaE(b);
 	}
-	public NaveNoTripulada agregarAlim(NaveNoTripulada a) {
+	public NaveNoTripulada agregarNaveNoTripulada(NaveNoTripulada a) {
 		NaveNoTripuladaE b = nDAO.agregarNaveNaveNoTripulada(toNaveNoTripuladaE(a));
 		return fromNaveNoTripuladaE(b);
 	}

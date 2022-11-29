@@ -27,6 +27,7 @@ public class NaveTripuladaE implements Serializable {
 	@Column(unique=true)
 	private String nombre;
 	private int peso;
+	private int peso_transporte;
 	private int empuje;
 	private int motor;
 	private int alto;
@@ -124,16 +125,24 @@ public class NaveTripuladaE implements Serializable {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-		
+	public int getPeso_transporte() {
+		return peso_transporte;
+	}
+	public void setPeso_transporte(int peso_transporte) {
+		this.peso_transporte = peso_transporte;
+	}
+	
 	//Constructores
 	public NaveTripuladaE() {
 		super();
 	}
-	public NaveTripuladaE(String nombre, int peso, int empuje, int motor, int alto, int ancho, String pais,
-			int velocidad_maxima, Date fecha_inicio, Date fecha_fin, String combustible, int tipo, int capacidad) {
+	public NaveTripuladaE(String nombre, int peso, int peso_transporte, int empuje, int motor, int alto, int ancho,
+			String pais, int velocidad_maxima, Date fecha_inicio, Date fecha_fin, String combustible, int tipo,
+			int capacidad) {
 		super();
 		this.nombre = nombre;
 		this.peso = peso;
+		this.peso_transporte = peso_transporte;
 		this.empuje = empuje;
 		this.motor = motor;
 		this.alto = alto;

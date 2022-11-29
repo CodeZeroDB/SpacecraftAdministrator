@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<link href="../resouces/css/bootstrap.min.css" rel="stylesheet" />
+		<title>Alta de nave</title>
+	</h:head>
+	
+	<ui:include src="/resouces/layout/header.xhtml"/>
+	
+	<f:metadata>
+		<f:event type="preRenderView" listener="#{gestionNave.preRenderViewListener}"/>
+	</f:metadata>
+	
+	<h:body>
+		<div class="container" style="width: 50%; padding-top: 5em;">
+			<h:form id="idDatosNave">
+				
+				<h:panelGrid columns="3" id="formulario">
+					<p:outputLabel value="id" rendered="false"/>
+					<p:inputText id="id" disabled="true"  value="#{gestionUsuario.usuarioSeleccionado.id}" rendered="false"/>
+					<p:message for="id" style="color:red" rendered="false"/>
+					
+					<p:outputLabel value="Nombre" indicateRequired="true"/>
+					<p:inputText id="nombre" value="#{gestionNave.naveSeleccionada.nombre}" maxlength="32" minlength="1"/>
+					<p:message for="nombre" style="color:red"/>
+					
+					<p:outputLabel value="Tipo" indicateRequired="true"/>
+					<p:selectOneMenu id="type" value="#{gestionNave.tipo}" >
+		   				<f:selectItem itemValue="" itemLabel="Seleccione un tipo" />
+		   				<f:selectItem itemValue="Lanzadera" itemLabel="Lanzadera" />
+		   				<f:selectItem itemValue="No tripulada" itemLabel="Encargado" />
+		   				<f:selectItem itemValue="Tripulada" itemLabel="Personal" />
+		   				<p:ajax event="change" update="formulario" />
+					</p:selectOneMenu>
+					<p:message for="type" style="color:red" />
+					
+					<p:outputLabel value="Peso" indicateRequired="true"/>
+					<p:inputText id="peso" maxlength="5" value="#{gestionNave.naveSeleccionada.peso}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="peso" style="color:red" />
+					
+					<p:outputLabel value="Empuje" indicateRequired="true"/>
+					<p:inputText id="empuje" maxlength="5" value="#{gestionNave.naveSeleccionada.empuje}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="empuje" style="color:red" />
+					
+					<p:outputLabel value="Motores" indicateRequired="true"/>
+					<p:inputText id="motores" maxlength="5" value="#{gestionNave.naveSeleccionada.motor}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="motores" style="color:red" />
+					
+					<p:outputLabel value="Alto" indicateRequired="true"/>
+					<p:inputText id="alto" maxlength="5" value="#{gestionNave.naveSeleccionada.alto}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="alto" style="color:red" />
+					
+					<p:outputLabel value="Ancho" indicateRequired="true"/>
+					<p:inputText id="ancho" maxlength="5" value="#{gestionNave.naveSeleccionada.ancho}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="ancho" style="color:red" />
+					
+					<p:outputLabel value="Peso de transporte" indicateRequired="true"/>
+					<p:inputText id="pesoTr" maxlength="5" value="#{gestionNave.naveSeleccionada.peso_transporte}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="pesoTr" style="color:red" />
+					
+					<p:outputLabel value="País" indicateRequired="true"/>
+					<p:inputText id="pais" value="#{gestionNave.naveSeleccionada.pais}" maxlength="32" minlength="1"/>
+					<p:message for="pais" style="color:red"/>
+					
+					<p:outputLabel value="Velocidad máxima" indicateRequired="true"/>
+					<p:inputText id="vel" maxlength="5" value="#{gestionNave.naveSeleccionada.velocidad_maxima}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="vel" style="color:red" />
+					
+					<p:outputLabel value="Inicio de actividad" indicateRequired="true"/>
+					
+					<p:outputLabel value="Finalización de actividad"/>
+					
+					<p:outputLabel value="Combustible" indicateRequired="true"/>
+					<p:inputText id="combustible" value="#{gestionNave.naveSeleccionada.combustible}" maxlength="32" minlength="1"/>
+					<p:message for="combustible" style="color:red"/>
+					
+					<p:outputLabel value="Desplazamiento" indicateRequired="true"/>
+					<p:inputText id="des" maxlength="5" value="#{gestionNave.des}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="des" style="color:red" />
+					
+					<p:outputLabel value="Potencia" indicateRequired="true"/>
+					<p:inputText id="pot" maxlength="5" value="#{gestionNave.pot}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="pot" style="color:red" />
+					
+					<p:outputLabel value="Capacidad" indicateRequired="true"/>
+					<p:inputText id="cap" maxlength="5" value="#{gestionNave.cap}"  onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" type="number"/>
+					<p:message for="cap" style="color:red" />
+				</h:panelGrid>
+				<!-- <p:tooltip id="toolTipUser" for="ussin" value="Al menos 8 caractéres, sólo letras"/> -->
+				<!-- <h:commandButton id="idAlta"  value="Dar de alta" styleClass="btn-dark"></h:commandButton> --> 
+			</h:form>
+		</div>
+	</h:body>
+</html>
